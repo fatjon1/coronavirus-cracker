@@ -17,7 +17,8 @@ import java.util.List;
 
 public class GetData {
 
-    public static void getData() throws URISyntaxException, IOException, InterruptedException {
+//    kjo metode eshte per te mare te dhenat nga web servisi ne format json.
+    public static Qarku[] getData() throws URISyntaxException, IOException, InterruptedException {
         List<Qarku> qarqet = new ArrayList<>();
         HttpClient client = HttpClient.newHttpClient();
 
@@ -26,13 +27,18 @@ public class GetData {
                 .GET()
                 .build();
         HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
-        System.out.println(response.body());
+        //System.out.println(response.body());
 
 
 
-        /*Gson gson = new GsonBuilder().create();
-        Qarku data = gson.fromJson(response.body(), Qarku.class);
-        System.out.println(data);*/
+        Gson gson = new GsonBuilder().create();
+        Qarku[] qarqe = gson.fromJson(response.body(), Qarku[].class);
+        /*for (Qarku qark : qarqe
+                ) {
+            System.out.println(qark);
+        }*/
+        return qarqe;
+
     }
 
 }

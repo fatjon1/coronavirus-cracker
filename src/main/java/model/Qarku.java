@@ -15,14 +15,14 @@ import javax.persistence.*;
 public class Qarku {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    public Long id;
+    public Long Id;
     public String qarku;
-    public Integer rasteGjithsej;
+    public Integer raste_gjithsej;
     public Integer sheruar;
     public Integer vdekur;
-    public Integer aktPozitive;
+    public Integer akt_pozitive;
     public Integer terapiInt;
-    public Integer mjekimSpitalor;
+    public Integer mjekim_spitalor;
     public Integer izolim;
     public Integer teste;
     public String lat;
