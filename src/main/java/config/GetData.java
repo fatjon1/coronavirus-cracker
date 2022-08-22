@@ -1,8 +1,12 @@
 package config;
 
-import model.Qarqet;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import model.Qarku;
+
 
 import java.io.IOException;
+import java.io.Reader;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.http.HttpClient;
@@ -14,7 +18,7 @@ import java.util.List;
 public class GetData {
 
     public static void getData() throws URISyntaxException, IOException, InterruptedException {
-        List<Qarqet> qarqet = new ArrayList<>();
+        List<Qarku> qarqet = new ArrayList<>();
         HttpClient client = HttpClient.newHttpClient();
 
         HttpRequest request = HttpRequest.newBuilder()
@@ -23,6 +27,12 @@ public class GetData {
                 .build();
         HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
         System.out.println(response.body());
+
+
+
+        /*Gson gson = new GsonBuilder().create();
+        Qarku data = gson.fromJson(response.body(), Qarku.class);
+        System.out.println(data);*/
     }
 
 }
