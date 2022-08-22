@@ -1,5 +1,6 @@
 package config;
 
+import model.Qarku;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
@@ -31,7 +32,7 @@ public class Hibernate {
 
                 configuration.setProperties(settings);
 
-                //configuration.addAnnotatedClass(Student.class);
+                configuration.addAnnotatedClass(Qarku.class);
 
                 ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
                         .applySettings(configuration.getProperties()).build();

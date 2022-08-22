@@ -33,8 +33,10 @@ public class Main {
          // duke ruajtur te dhenat e perditesuara.
 
         Qarku[] qarqet = GetData.getData();
+        //Qarku fier = new Qarku(1L,"fier",1,1,1,1,1,1,1,1,"1","1");
         System.out.println(Arrays.stream(qarqet).findFirst().get().qarku);
         QarkuService qarkuService = new QarkuService();
+       // qarkuService.persist(fier);
         for (Qarku q:qarqet
              ) {
             qarkuService.persist(q);
