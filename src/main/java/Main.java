@@ -5,6 +5,7 @@ import service.QarkuService;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.Arrays;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws URISyntaxException, IOException, InterruptedException {
@@ -32,16 +33,13 @@ public class Main {
          //TODO: ne momentin qe startohet app metoda me siper behet run dhe behet reset database
          // duke ruajtur te dhenat e perditesuara.
 
-        Qarku[] qarqet = GetData.getData();
-        //Qarku fier = new Qarku(1L,"fier",1,1,1,1,1,1,1,1,"1","1");
-        System.out.println(Arrays.stream(qarqet).findFirst().get().qarku);
-        QarkuService qarkuService = new QarkuService();
-       // qarkuService.persist(fier);
-        for (Qarku q:qarqet
-             ) {
-            qarkuService.persist(q);
-        }
+        List<Qarku> qarqet = GetData.getData();
+        Qarku fier = new Qarku(null,"fiertest",1,1,1,1,1,1,1,1,"1","1");
 
+        QarkuService qarkuService = new QarkuService();
+        qarkuService.saveAll(qarqet);
+        qarkuService.persist(fier);
+        System.out.println(qarkuService.findAll());
 
 
     }

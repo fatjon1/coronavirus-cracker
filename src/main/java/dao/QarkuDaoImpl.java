@@ -7,27 +7,24 @@ import model.Qarku;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
-import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
-import org.hibernate.cfg.Configuration;
-
-import javax.persistence.EntityManager;
-import javax.persistence.Query;
 import java.util.List;
-import java.util.Optional;
-@AllArgsConstructor
-@NoArgsConstructor
+
 public class QarkuDaoImpl implements QarkuDao<Qarku, Long>{
 
-    private Session currentSession = Hibernate.getSessionFactory().getCurrentSession();
+    private Session currentSession;
 
     private Transaction currentTransaction;
 
+    public QarkuDaoImpl() {
+    }
 
     public Session openCurrentSession() {
+        currentSession = getSessionFactory().openSession();
         return currentSession;
     }
 
     public Session openCurrentSessionwithTransaction() {
+        currentSession = getSessionFactory().openSession();
         currentTransaction = currentSession.beginTransaction();
         return currentSession;
     }
@@ -65,7 +62,12 @@ public class QarkuDaoImpl implements QarkuDao<Qarku, Long>{
         getCurrentSession().save(entity);
     }
 
-    /*public void persistAll(List<Qarku> entity) {
+    @Override
+    public void saveAll(List<Qarku> entity) {
+        entity.forEach(e->getCurrentSession().save(e));
+    }
+
+    /*public void persistAll(List<Qarku> entity) {c
         getCurrentSession().save(entity);
     }*/
 
@@ -85,7 +87,7 @@ public class QarkuDaoImpl implements QarkuDao<Qarku, Long>{
 
     @SuppressWarnings("unchecked")
     public List<Qarku> findAll() {
-        List<Qarku> books = (List<Qarku>) getCurrentSession().createQuery("from Book").list();
+        List<Qarku> books = (List<Qarku>) getCurrentSession().createQuery("from Qarku").list();
         return books;
     }
 

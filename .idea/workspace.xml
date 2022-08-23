@@ -7,7 +7,10 @@
     <list default="true" id="e9b98ce7-d0ce-411b-8c18-9f886b5c145d" name="Changes" comment="db config added">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Qarku.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Qarku.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/config/GetData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/config/GetData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/QarkuDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/QarkuDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/QarkuDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/QarkuDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/QarkuService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/QarkuService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +78,7 @@
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="coronavirus-cracker" />
+      <module name="coronavirus-tracker" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>

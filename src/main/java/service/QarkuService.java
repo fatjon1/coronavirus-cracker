@@ -2,19 +2,14 @@ package service;
 
 import dao.QarkuDao;
 import dao.QarkuDaoImpl;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 import model.Qarku;
-
 import java.util.List;
-
 public class QarkuService {
 
     private static QarkuDaoImpl qarkuDao;
 
     public QarkuService() {
-        qarkuDao = new QarkuDaoImpl() {
-        };
+        qarkuDao = new QarkuDaoImpl();
     }
 
     public void persist(Qarku entity) {
@@ -56,7 +51,9 @@ public class QarkuService {
         qarkuDao.closeCurrentSessionwithTransaction();
     }
 
-    /*public QarkuDaoImpl bookDao() {
-        return qarkuDao;
-    }*/
+    public void saveAll(List<Qarku> qarku) {
+        qarkuDao.openCurrentSession();
+        qarkuDao.saveAll(qarku);
+        qarkuDao.closeCurrentSession();
+    }
 }

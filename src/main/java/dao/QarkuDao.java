@@ -7,6 +7,7 @@ import java.util.Optional;
 public interface QarkuDao <T, Id extends Serializable> {
 
     public void persist(T entity);
+    public void saveAll(List<T> entity);
 
     public void update(T entity);
 
