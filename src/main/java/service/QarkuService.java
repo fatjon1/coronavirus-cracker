@@ -24,14 +24,14 @@ public class QarkuService {
         qarkuDao.closeCurrentSessionwithTransaction();
     }
 
-    public Qarku findById(String id) {
+    public Qarku findById(Long id) {
         qarkuDao.openCurrentSession();
         Qarku book = qarkuDao.findById(id);
         qarkuDao.closeCurrentSession();
         return book;
     }
 
-    public void delete(String id) {
+    public void delete(Long id) {
         qarkuDao.openCurrentSessionwithTransaction();
         Qarku book = qarkuDao.findById(id);
         qarkuDao.delete(book);

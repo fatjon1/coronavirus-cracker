@@ -76,9 +76,9 @@ public class QarkuDaoImpl implements QarkuDao<Qarku, Long>{
     }
 
 
-    public Qarku findById(String ID) {
-        Qarku book = (Qarku) getCurrentSession().get(Qarku.class, ID);
-        return book;
+    public Qarku findById(Long id) {
+        Qarku qarku = (Qarku) getCurrentSession().get(Qarku.class, id);
+        return qarku;
     }
 
     public void delete(Qarku entity) {

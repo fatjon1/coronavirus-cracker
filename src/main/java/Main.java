@@ -41,6 +41,9 @@ public class Main {
         qarkuService.persist(fier);
         System.out.println(qarkuService.findAll());
 
+        qarkuService.deleteAll();
+        System.out.println(qarkuService.findAll());
+
 
     }
 }

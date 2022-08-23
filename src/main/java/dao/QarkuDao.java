@@ -11,7 +11,7 @@ public interface QarkuDao <T, Id extends Serializable> {
 
     public void update(T entity);
 
-    public T findById(String id);
+    public T findById(Long id);
 
     public void delete(T entity);
 
