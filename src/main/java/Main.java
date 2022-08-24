@@ -12,8 +12,9 @@ public class Main {
 
         QarkuService qarkuService = new QarkuService();
 
-        System.out.println(qarkuService.findAll());
-        System.out.println(qarkuService.findByQarku("Berat"));
+        //System.out.println(qarkuService.findAll());
+       // System.out.println(qarkuService.findByQarku("Berat"));
+        System.out.println(qarkuService.qarkuMeShumeInfektime());
 
 
     }

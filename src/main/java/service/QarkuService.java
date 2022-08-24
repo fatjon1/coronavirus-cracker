@@ -1,9 +1,11 @@
 package service;
 
-import dao.QarkuDao;
 import dao.QarkuDaoImpl;
 import model.Qarku;
 import java.util.List;
+import java.util.TreeMap;
+import java.util.stream.Collectors;
+
 public class QarkuService {
 
     private static QarkuDaoImpl qarkuDao;
@@ -64,4 +66,16 @@ public class QarkuService {
         qarkuDao.saveAll(qarku);
         qarkuDao.closeCurrentSessionwithTransaction();
     }
+
+    public List<Qarku> qarkuMeShumeInfektime(){
+        List<Qarku> val = findAll().stream().collect(Collectors.groupingBy(
+                        Qarku::getRaste_gjithsej,
+                        TreeMap::new,
+                        Collectors.toList()
+                ))
+                .lastEntry()
+                .getValue();
+        return val;
+    }
+
 }
