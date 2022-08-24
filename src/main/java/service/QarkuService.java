@@ -45,6 +45,14 @@ public class QarkuService {
         return qarqet;
     }
 
+    // kjo metode selekton qarkun sipas emrit
+    public List<Qarku> findByQarku(String name) {
+        qarkuDao.openCurrentSession();
+        List<Qarku> qark = qarkuDao.findByQarku(name);
+        qarkuDao.closeCurrentSession();
+        return qark;
+    }
+
     public void deleteAll() {
         qarkuDao.openCurrentSessionwithTransaction();
         qarkuDao.deleteAll();
@@ -52,8 +60,8 @@ public class QarkuService {
     }
 
     public void saveAll(List<Qarku> qarku) {
-        qarkuDao.openCurrentSession();
+        qarkuDao.openCurrentSessionwithTransaction();
         qarkuDao.saveAll(qarku);
-        qarkuDao.closeCurrentSession();
+        qarkuDao.closeCurrentSessionwithTransaction();
     }
 }

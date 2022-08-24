@@ -13,6 +13,8 @@ public interface QarkuDao <T, Id extends Serializable> {
 
     public T findById(Long id);
 
+    public List<T> findByQarku(String qarku);
+
     public void delete(T entity);
 
     public List<T> findAll();

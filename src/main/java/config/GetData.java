@@ -30,11 +30,12 @@ public class GetData {
         //System.out.println(response.body());
 
 
-
+        // bejme mapimin e te dhenave qe vijne nga metoda me siper
+        // ne formatin json dhe i transformojme ne objekte java.
         Gson gson = new GsonBuilder().create();
-        Qarku[] qarqe = gson.fromJson(response.body(), Qarku[].class);
-        List<Qarku> qarqeList = Arrays.stream(qarqe).toList();
-        return qarqeList;
+        Qarku[] qarqe = gson.fromJson(response.body(), Qarku[].class); // i ruajme ne nje array
+        List<Qarku> qarqeList = Arrays.stream(qarqe).toList(); //array e transformojme ne list
+        return qarqeList; // kthejme nje liste me te dhena
 
     }
 

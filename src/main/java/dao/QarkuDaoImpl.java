@@ -7,6 +7,8 @@ import model.Qarku;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+
+import javax.persistence.Query;
 import java.util.List;
 
 public class QarkuDaoImpl implements QarkuDao<Qarku, Long>{
@@ -67,9 +69,6 @@ public class QarkuDaoImpl implements QarkuDao<Qarku, Long>{
         entity.forEach(e->getCurrentSession().save(e));
     }
 
-    /*public void persistAll(List<Qarku> entity) {c
-        getCurrentSession().save(entity);
-    }*/
 
     public void update(Qarku entity) {
         getCurrentSession().update(entity);
@@ -79,6 +78,15 @@ public class QarkuDaoImpl implements QarkuDao<Qarku, Long>{
     public Qarku findById(Long id) {
         Qarku qarku = (Qarku) getCurrentSession().get(Qarku.class, id);
         return qarku;
+    }
+
+
+    // kjo metode selekton qarkun sipas emrit
+    public List<Qarku> findByQarku(String qarku) {
+        String hql = "FROM Qarku Q WHERE Q.qarku = :qarku";
+        Query query = getCurrentSession().createQuery(hql);
+        query.setParameter("qarku",qarku);
+        return query.getResultList();
     }
 
     public void delete(Qarku entity) {

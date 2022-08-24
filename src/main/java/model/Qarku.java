@@ -21,7 +21,7 @@ public class Qarku {
     public Integer sheruar;
     public Integer vdekur;
     public Integer akt_pozitive;
-    public Integer terapiInt;
+    public Integer terapi_int;
     public Integer mjekim_spitalor;
     public Integer izolim;
     public Integer teste;
