@@ -8,7 +8,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/config/Hibernate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/config/Hibernate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/QarkuService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/QarkuService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +81,7 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "com.intellij.jarRepository.settings.RemoteRepositoriesConfigurable"
+    "settings.editor.selected.configurable": "debugger.dataViews"
   }
 }]]></component>
   <component name="RunAnythingCache">
@@ -91,6 +90,13 @@
     </option>
   </component>
   <component name="RunManager" selected="Application.Main">
+    <configuration name="JEditorPaneTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="JEditorPaneTest" />
+      <module name="coronavirus-tracker" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="coronavirus-tracker" />
@@ -124,12 +130,14 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Application.JEditorPaneTest" />
       <item itemvalue="Application.Main" />
       <item itemvalue="Maven.coronavirus-cracker [tomcat7:run]" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.JEditorPaneTest" />
       </list>
     </recent_temporary>
   </component>
@@ -233,7 +241,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661342878344</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="update">
+      <created>1661345368348</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1661345368348</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
