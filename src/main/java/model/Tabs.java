@@ -1,4 +1,4 @@
-package dao;
+package model;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import model.Qarku;
 
+import javax.persistence.Entity;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -18,18 +19,19 @@ import java.util.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
+
 public class Tabs {
 
-    public String rasteGjithesej;
-    public String rasteGjithesejDje;
-    public String rasteAktive;
-    public String rasteAktiveDje;
-    public String teSheruar;
-    public String teSheruarDje;
-    public String teVdekur;
-    public String teVdekurDje;
-    public String testeGjithesej;
-    public String testeGjithesejDje;
+    public String raste_gjithesej;
+    public String raste_gjithesej_dje;
+    public String raste_aktive;
+    public String raste_aktive_dje;
+    public String te_sheruar;
+    public String te_sheruar_dje;
+    public String te_vdekur;
+    public String te_vdekur_dje;
+    public String teste_gjithesej;
+    public String teste_gjithesej_dje;
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     public Map<String, Object> getAdditionalProperties() {

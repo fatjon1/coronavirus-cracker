@@ -11,7 +11,6 @@ import javax.persistence.*;
 @Data
 @ToString
 @Entity
-//@Table(name = "qarku")
 public class Qarku {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

@@ -5,9 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e9b98ce7-d0ce-411b-8c18-9f886b5c145d" name="Changes" comment="update">
+      <change afterPath="$PROJECT_DIR$/src/main/java/model/Stats.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/config/DbInit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/config/DbInit.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/config/Hibernate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/config/Hibernate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/QarkuDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/Dao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/QarkuDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/QarkuDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/Stats.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/Tabs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Tabs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Qarku.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Qarku.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/QarkuService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/QarkuService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,9 +67,6 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
-  </component>
   <component name="ProjectId" id="2DfAk0ZZHTcIVS6ekb45dgIrRJv" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -69,75 +75,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "jdk.selected.JAVA_MODULE": "18",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "debugger.dataViews"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;18&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
-}]]></component>
-  <component name="RunAnythingCache">
-    <option name="myCommands">
-      <command value="mvn tomcat7:run" />
-    </option>
-  </component>
-  <component name="RunManager" selected="Application.Main">
-    <configuration name="JEditorPaneTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="JEditorPaneTest" />
-      <module name="coronavirus-tracker" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+}</component>
+  <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="coronavirus-tracker" />
+      <module name="coronavirus-cracker" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="coronavirus-cracker [tomcat7:run]" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
-      <MavenSettings>
-        <option name="myGeneralSettings" />
-        <option name="myRunnerSettings" />
-        <option name="myRunnerParameters">
-          <MavenRunnerParameters>
-            <option name="profiles">
-              <set />
-            </option>
-            <option name="goals">
-              <list>
-                <option value="tomcat7:run" />
-              </list>
-            </option>
-            <option name="pomFileName" />
-            <option name="profilesMap">
-              <map />
-            </option>
-            <option name="resolveToWorkspace" value="false" />
-            <option name="workingDirPath" value="$PROJECT_DIR$" />
-          </MavenRunnerParameters>
-        </option>
-      </MavenSettings>
-      <method v="2" />
-    </configuration>
-    <list>
-      <item itemvalue="Application.JEditorPaneTest" />
-      <item itemvalue="Application.Main" />
-      <item itemvalue="Maven.coronavirus-cracker [tomcat7:run]" />
-    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
-        <item itemvalue="Application.JEditorPaneTest" />
       </list>
     </recent_temporary>
   </component>
@@ -227,28 +189,7 @@
       <option name="project" value="LOCAL" />
       <updated>1661248271001</updated>
     </task>
-    <task id="LOCAL-00012" summary="update">
-      <created>1661258526820</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1661258526820</updated>
-    </task>
-    <task id="LOCAL-00013" summary="update">
-      <created>1661342878344</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1661342878344</updated>
-    </task>
-    <task id="LOCAL-00014" summary="update">
-      <created>1661345368348</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1661345368348</updated>
-    </task>
-    <option name="localTasksCounter" value="15" />
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -267,5 +208,20 @@
     <MESSAGE value="db config added" />
     <MESSAGE value="update" />
     <option name="LAST_COMMIT_MESSAGE" value="update" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/service/QarkuService.java</url>
+          <line>67</line>
+          <properties class="service.QarkuService" method="saveAll">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

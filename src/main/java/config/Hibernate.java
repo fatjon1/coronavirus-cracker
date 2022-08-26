@@ -1,5 +1,7 @@
 package config;
 
+import com.fasterxml.classmate.AnnotationConfiguration;
+import model.Stats;
 import model.Qarku;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
@@ -28,8 +30,6 @@ public class Hibernate {
 
                 settings.put(Environment.LOG_JDBC_WARNINGS, "false");
 
-
-
                 settings.put(Environment.CURRENT_SESSION_CONTEXT_CLASS, "thread");
 
                 settings.put(Environment.HBM2DDL_AUTO, "create-drop");
@@ -37,15 +37,20 @@ public class Hibernate {
                 configuration.setProperties(settings);
 
                 configuration.addAnnotatedClass(Qarku.class);
+                //configuration.addAnnotatedClass(Stats.class);
 
                 ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
                         .applySettings(configuration.getProperties()).build();
 
-                sessionFactory = configuration.buildSessionFactory(serviceRegistry);
+                sessionFactory = configuration
+                        .addPackage("coronavirus-cracker.model")
+                        .addAnnotatedClass(Stats.class)
+                        .buildSessionFactory(serviceRegistry);
             } catch (Exception e) {
                 e.printStackTrace();
             }
         }
+
         return sessionFactory;
     }
 }

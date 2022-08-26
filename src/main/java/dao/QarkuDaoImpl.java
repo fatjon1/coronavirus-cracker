@@ -1,17 +1,16 @@
 package dao;
 
 import config.Hibernate;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
+import lombok.Data;
 import model.Qarku;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
-import javax.persistence.Query;
 import java.util.List;
 
-public class QarkuDaoImpl implements QarkuDao<Qarku, Long>{
+@Data
+public class QarkuDaoImpl implements Dao<Qarku, Long>{
 
     private Session currentSession;
 
@@ -41,7 +40,7 @@ public class QarkuDaoImpl implements QarkuDao<Qarku, Long>{
     }
 
     private static SessionFactory getSessionFactory() {
-       return Hibernate.getSessionFactory();
+        return Hibernate.getSessionFactory();
     }
 
     public Session getCurrentSession() {
@@ -64,14 +63,13 @@ public class QarkuDaoImpl implements QarkuDao<Qarku, Long>{
         getCurrentSession().save(entity);
     }
 
-    @Override
+
     public void saveAll(List<Qarku> entity) {
         entity.forEach(e->getCurrentSession().save(e));
     }
 
 
-    public void update(Qarku entity) {
-        getCurrentSession().update(entity);
+    public void update(Qarku entity) {getCurrentSession().update(entity);
     }
 
 
@@ -81,13 +79,13 @@ public class QarkuDaoImpl implements QarkuDao<Qarku, Long>{
     }
 
 
-    // kjo metode selekton qarkun sipas emrit
+ /*   // kjo metode selekton qarkun sipas emrit
     public List<Qarku> findByQarku(String qarku) {
         String hql = "FROM Qarku Q WHERE Q.qarku = :qarku";
         Query query = getCurrentSession().createQuery(hql);
         query.setParameter("qarku",qarku);
         return query.getResultList();
-    }
+    }*/
 
     public void delete(Qarku entity) {
         getCurrentSession().delete(entity);
@@ -97,6 +95,11 @@ public class QarkuDaoImpl implements QarkuDao<Qarku, Long>{
     public List<Qarku> findAll() {
         List<Qarku> books = (List<Qarku>) getCurrentSession().createQuery("from Qarku").list();
         return books;
+    }
+
+    public Qarku findQarkuByName(String qarku){
+        Qarku val = findAll().stream().filter(q -> q.getQarku().equals(qarku)).findFirst().get();
+    return val;
     }
 
     public void deleteAll() {

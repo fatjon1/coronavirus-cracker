@@ -8,11 +8,8 @@ import java.util.stream.Collectors;
 
 public class QarkuService {
 
-    private static QarkuDaoImpl qarkuDao;
+    private static QarkuDaoImpl qarkuDao = new QarkuDaoImpl();
 
-    public QarkuService() {
-        qarkuDao = new QarkuDaoImpl();
-    }
 
     public void persist(Qarku entity) {
         qarkuDao.openCurrentSessionwithTransaction();
@@ -47,12 +44,19 @@ public class QarkuService {
         return qarqet;
     }
 
-    // kjo metode selekton qarkun sipas emrit
+/*    // kjo metode selekton qarkun sipas emrit
     public List<Qarku> findByQarku(String name) {
         qarkuDao.openCurrentSession();
         List<Qarku> qark = qarkuDao.findByQarku(name);
         qarkuDao.closeCurrentSession();
         return qark;
+    }*/
+
+    public Qarku findQarkuByName(String name) {
+        qarkuDao.openCurrentSession();
+        Qarku qarku = qarkuDao.findQarkuByName(name);
+        qarkuDao.closeCurrentSession();
+        return qarku;
     }
 
     public void deleteAll() {
