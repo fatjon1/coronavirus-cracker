@@ -2,8 +2,6 @@ package service;
 
 import config.DbInit;
 import dao.SheruarDaoImpl;
-import model.Kategorite;
-import model.RasteAktive;
 import model.Sheruar;
 import model.Stats;
 
@@ -24,7 +22,7 @@ public class SheruarService {
         sheruarDao.closeCurrentSessionwithTransaction();
     }
     public void init() throws URISyntaxException, IOException, InterruptedException {
-        Stats stat = DbInit.getDatas();
+        Stats stat = DbInit.getCategoryStatistics();
         Map<Long, Integer> sheruarMap = new HashMap<>();
 
         for (Integer val :stat.getSheruar()

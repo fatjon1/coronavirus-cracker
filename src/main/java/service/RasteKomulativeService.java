@@ -1,10 +1,7 @@
 package service;
 
 import config.DbInit;
-import dao.RasteAktiveDaoImpl;
 import dao.RasteKomulativeDaoImpl;
-import model.Kategorite;
-import model.RasteAktive;
 import model.RasteKomulative;
 import model.Stats;
 
@@ -26,7 +23,7 @@ public class RasteKomulativeService {
     }
 
     public void init() throws URISyntaxException, IOException, InterruptedException {
-        Stats stat = DbInit.getDatas();
+        Stats stat = DbInit.getCategoryStatistics();
         Map<Long, Integer> rasteKomutativeMap = new HashMap<>();
 
         for (Integer val :stat.getRaste_kumulative()

@@ -2,8 +2,6 @@ package service;
 
 import config.DbInit;
 import dao.RasteTeRejaDaoImpl;
-import model.Kategorite;
-import model.RasteAktive;
 import model.RasteTeReja;
 import model.Stats;
 
@@ -25,7 +23,7 @@ public class RasteTeRejaService {
     }
 
     public void init() throws URISyntaxException, IOException, InterruptedException {
-        Stats stat = DbInit.getDatas();
+        Stats stat = DbInit.getCategoryStatistics();
         Map<Long, Integer> rasteTeRejaMap = new HashMap<>();
 
         for (Integer val :stat.getRaste_te_reja()

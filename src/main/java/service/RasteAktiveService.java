@@ -2,7 +2,6 @@ package service;
 
 import config.DbInit;
 import dao.RasteAktiveDaoImpl;
-import model.Kategorite;
 import model.RasteAktive;
 import model.Stats;
 
@@ -26,7 +25,7 @@ public class RasteAktiveService {
     }
 
     public void init() throws URISyntaxException, IOException, InterruptedException {
-        Stats stat = DbInit.getDatas();
+        Stats stat = DbInit.getCategoryStatistics();
         Map<Long, Integer> rasteAktiveMap = new HashMap<>();
 
         for (Integer val :stat.getRaste_aktive()

@@ -23,7 +23,7 @@ public class VdekjeKomulativeService {
     }
 
     public void init() throws URISyntaxException, IOException, InterruptedException {
-        Stats stat = DbInit.getDatas();
+        Stats stat = DbInit.getCategoryStatistics();
         Map<Long, Integer> vdekjeKomutativeMap = new HashMap<>();
 
         for (Integer val :stat.getVdekje_kumulative()

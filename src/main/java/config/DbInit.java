@@ -42,7 +42,7 @@ public class DbInit {
 
     }
 
-    public static Stats getDatas() throws URISyntaxException, IOException, InterruptedException {
+    public static Stats getCategoryStatistics() throws URISyntaxException, IOException, InterruptedException {
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(new URI("https://coronavirus.al/api/stats.php"))

@@ -3,7 +3,6 @@ package service;
 import config.DbInit;
 import dao.KategoriteDaoImpl;
 import model.Kategorite;
-import model.Sheruar;
 import model.Stats;
 
 import java.io.IOException;
@@ -24,7 +23,7 @@ public class KategoriteService {
     }
 
     public void init() throws URISyntaxException, IOException, InterruptedException {
-        Stats stat = DbInit.getDatas();
+        Stats stat = DbInit.getCategoryStatistics();
         Map<Long, String> kategoriteMap = new HashMap<>();
 
         for (String kat:stat.getKategorite()
