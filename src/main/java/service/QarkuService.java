@@ -3,6 +3,7 @@ package service;
 import dao.QarkuDaoImpl;
 import model.Qarku;
 import java.util.List;
+import java.util.Scanner;
 import java.util.TreeMap;
 import java.util.stream.Collectors;
 
@@ -80,6 +81,17 @@ public class QarkuService {
                 .lastEntry()
                 .getValue();
         return val;
+    }
+
+    public void findByCity(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("vendos qytetin: ");
+        String city = scanner.nextLine();
+        List<Qarku> qarku = this.findAll().stream().filter(q -> q.getQarku().equals(city)).collect(Collectors.toList());
+        if (qarku.size()==0) {
+            qarku.stream().forEach(System.out::println);
+        }
+        System.out.println("ska");
     }
 
 }

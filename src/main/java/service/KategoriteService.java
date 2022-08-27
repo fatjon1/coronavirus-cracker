@@ -37,4 +37,5 @@ public class KategoriteService {
             this.persist(new Kategorite(entry.getKey(), entry.getValue()));
         }
     }
+
 }

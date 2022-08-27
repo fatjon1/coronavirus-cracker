@@ -6,13 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e9b98ce7-d0ce-411b-8c18-9f886b5c145d" name="Changes" comment="update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/config/DbInit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/config/DbInit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/KategoriteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/KategoriteService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/RasteAktiveService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/RasteAktiveService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/RasteKomulativeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/RasteKomulativeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/RasteTeRejaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/RasteTeRejaService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/SheruarService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/SheruarService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/VdekjeKomulativeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/VdekjeKomulativeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/config/Hibernate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/config/Hibernate.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -293,7 +287,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661592134235</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="update">
+      <created>1661603406954</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1661603406954</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

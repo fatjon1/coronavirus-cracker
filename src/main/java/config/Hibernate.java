@@ -50,6 +50,7 @@ public class Hibernate {
                         .addAnnotatedClass(RasteTeReja.class)
                         .addAnnotatedClass(Sheruar.class)
                         .addAnnotatedClass(VdekjeKomulative.class)
+                        .addAnnotatedClass(StatistikaKategori.class)
                         .buildSessionFactory(serviceRegistry);
             } catch (Exception e) {
                 e.printStackTrace();
