@@ -15,7 +15,6 @@ import javax.persistence.Id;
 @Entity
 public class Sheruar {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private Integer raste;
 }
