@@ -14,7 +14,6 @@ import javax.persistence.Id;
 @Entity
 public class Kategorite {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String datat;
 }
