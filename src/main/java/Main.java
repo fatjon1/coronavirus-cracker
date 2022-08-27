@@ -1,4 +1,5 @@
 
+import config.CoronavirusLogo;
 import config.DbInit;
 import model.Kategorite;
 import model.Stats;
@@ -15,14 +16,9 @@ public class Main {
     public static void main(String[] args) throws URISyntaxException, IOException, InterruptedException {
         DbInit.run();
         QarkuService qarkuService = new QarkuService();
-        KategoriteService kategoriteService =new KategoriteService();
-        Stats stats = new Stats();
-        RasteAktiveService rasteAktiveService = new RasteAktiveService();
 
-        //System.out.println(qarkuService.findAll());
-        // System.out.println(qarkuService.findByQarku("Berat"));
-        //CoronavirusLogo.logoPrint();
-        //System.out.println(qarkuService.qarkuMeShumeInfektime());
+        CoronavirusLogo.logoPrint();
+        System.out.println(qarkuService.qarkuMeShumeInfektime());
         //System.out.println(qarkuService.findAll());
 
 
@@ -30,4 +26,4 @@ public class Main {
     }
 
 
-    }
+}
