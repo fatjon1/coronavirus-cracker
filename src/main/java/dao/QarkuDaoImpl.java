@@ -1,6 +1,7 @@
 package dao;
 
 import config.Hibernate;
+import config.MySession;
 import lombok.Data;
 import model.Qarku;
 import org.hibernate.Session;
@@ -10,54 +11,8 @@ import org.hibernate.Transaction;
 import java.util.List;
 
 @Data
-public class QarkuDaoImpl implements Dao<Qarku, Long>{
+public class QarkuDaoImpl extends MySession implements Dao<Qarku, Long>{
 
-    private Session currentSession;
-
-    private Transaction currentTransaction;
-
-    public QarkuDaoImpl() {
-    }
-
-    public Session openCurrentSession() {
-        currentSession = getSessionFactory().openSession();
-        return currentSession;
-    }
-
-    public Session openCurrentSessionwithTransaction() {
-        currentSession = getSessionFactory().openSession();
-        currentTransaction = currentSession.beginTransaction();
-        return currentSession;
-    }
-
-    public void closeCurrentSession() {
-        currentSession.close();
-    }
-
-    public void closeCurrentSessionwithTransaction() {
-        currentTransaction.commit();
-        currentSession.close();
-    }
-
-    private static SessionFactory getSessionFactory() {
-        return Hibernate.getSessionFactory();
-    }
-
-    public Session getCurrentSession() {
-        return currentSession;
-    }
-
-    public void setCurrentSession(Session currentSession) {
-        this.currentSession = currentSession;
-    }
-
-    public Transaction getCurrentTransaction() {
-        return currentTransaction;
-    }
-
-    public void setCurrentTransaction(Transaction currentTransaction) {
-        this.currentTransaction = currentTransaction;
-    }
 
     public void persist(Qarku entity) {
         getCurrentSession().save(entity);

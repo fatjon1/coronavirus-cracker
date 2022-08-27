@@ -18,7 +18,7 @@ public class Main {
         KategoriteService kategoriteService =new KategoriteService();
         Stats stats = new Stats();
         RasteAktiveService rasteAktiveService = new RasteAktiveService();
-        //rasteAktiveService.init();
+
         //System.out.println(qarkuService.findAll());
         // System.out.println(qarkuService.findByQarku("Berat"));
         //CoronavirusLogo.logoPrint();
