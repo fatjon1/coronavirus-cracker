@@ -5,7 +5,7 @@ import model.StatistikaKategori;
 
 import java.util.List;
 
-public class StatistikaKategoriteDaoImpl extends MySession implements Dao<StatistikaKategori, String>{
+public class StatistikaKategoriteDaoImpl extends MySession implements Dao<StatistikaKategori, Long>{
     @Override
     public void persist(StatistikaKategori entity) {
         getCurrentSession().save(entity);
@@ -18,12 +18,17 @@ public class StatistikaKategoriteDaoImpl extends MySession implements Dao<Statis
 
     @Override
     public void update(StatistikaKategori entity) {
-
+    getCurrentSession().update(entity);
     }
 
     @Override
     public StatistikaKategori findById(Long id) {
         return null;
+    }
+
+
+    public StatistikaKategori findByData(String id) {
+        return findAll().stream().filter(statistikaKategori -> statistikaKategori.getDatat().equals(id)).findFirst().get();
     }
 
     @Override

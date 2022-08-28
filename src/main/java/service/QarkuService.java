@@ -45,17 +45,10 @@ public class QarkuService {
         return qarqet;
     }
 
-/*    // kjo metode selekton qarkun sipas emrit
-    public List<Qarku> findByQarku(String name) {
-        qarkuDao.openCurrentSession();
-        List<Qarku> qark = qarkuDao.findByQarku(name);
-        qarkuDao.closeCurrentSession();
-        return qark;
-    }*/
 
-    public Qarku findQarkuByName(String name) {
+    public List<Qarku> findQarkuByName(String name) {
         qarkuDao.openCurrentSession();
-        Qarku qarku = qarkuDao.findQarkuByName(name);
+        List<Qarku> qarku = qarkuDao.findByQarkuName(name);
         qarkuDao.closeCurrentSession();
         return qarku;
     }
@@ -83,15 +76,16 @@ public class QarkuService {
         return val;
     }
 
-    /*public void findByCity(){
+    public void findByCity() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("vendos qytetin: ");
         String city = scanner.nextLine();
-        List<Qarku> qarku = this.findAll().stream().filter(q -> q.getQarku().equals(city)).collect(Collectors.toList());
-        if (qarku.size()==0) {
-            qarku.stream().forEach(System.out::println);
+        if (findQarkuByName(city).isEmpty()){
+            System.out.println("Qyteti nuk u gjend!");
+        }else {
+            System.out.println(findQarkuByName(city));
         }
-        System.out.println("ska");
-    }*/
+
+    }
 
 }

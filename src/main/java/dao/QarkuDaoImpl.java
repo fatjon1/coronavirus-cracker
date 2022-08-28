@@ -8,6 +8,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
+import javax.persistence.Query;
 import java.util.List;
 
 @Data
@@ -34,13 +35,13 @@ public class QarkuDaoImpl extends MySession implements Dao<Qarku, Long>{
     }
 
 
- /*   // kjo metode selekton qarkun sipas emrit
-    public List<Qarku> findByQarku(String qarku) {
+    // kjo metode selekton qarkun sipas emrit
+    public List<Qarku> findByQarkuName(String qarku) {
         String hql = "FROM Qarku Q WHERE Q.qarku = :qarku";
         Query query = getCurrentSession().createQuery(hql);
         query.setParameter("qarku",qarku);
         return query.getResultList();
-    }*/
+    }
 
     public void delete(Qarku entity) {
         getCurrentSession().delete(entity);
@@ -50,11 +51,6 @@ public class QarkuDaoImpl extends MySession implements Dao<Qarku, Long>{
     public List<Qarku> findAll() {
         List<Qarku> books = (List<Qarku>) getCurrentSession().createQuery("from Qarku").list();
         return books;
-    }
-
-    public Qarku findQarkuByName(String qarku){
-        Qarku val = findAll().stream().filter(q -> q.getQarku().equals(qarku)).findFirst().get();
-    return val;
     }
 
     public void deleteAll() {

@@ -15,6 +15,8 @@ public class Main {
         System.out.println(qarkuService.qarkuMeShumeInfektime());
         //System.out.println(qarkuService.findAll());
 
+        qarkuService.findByCity();
+
 
 
     }

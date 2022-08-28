@@ -5,6 +5,9 @@ import dao.StatistikaKategoriteDaoImpl;
 import model.StatistikaKategori;
 import model.Stats;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 
 public class StatistikaKategoriService {
 
@@ -22,8 +25,10 @@ public class StatistikaKategoriService {
 
             for (int i = 0; i <= response.getKategorite().length; i ++) {
                 String data = response.getKategorite()[i];
+                
                 StatistikaKategori model = new StatistikaKategori();
-                model.setDatat(response.getKategorite()[i]);
+                Date date=new SimpleDateFormat("yyyy-dd-MM").parse(response.getKategorite()[i]);
+                model.setDatat(date);
                 model.setRaste_aktive(response.getRaste_aktive()[i]);
                 model.setRaste_te_reja(response.getRaste_te_reja()[i]);
                 model.setRastet_kumulative(response.getRaste_kumulative()[i]);
