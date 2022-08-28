@@ -1,8 +1,11 @@
 package dao;
 
 import config.MySession;
+import model.Qarku;
 import model.StatistikaKategori;
 
+import javax.persistence.Query;
+import java.util.Date;
 import java.util.List;
 
 public class StatistikaKategoriteDaoImpl extends MySession implements Dao<StatistikaKategori, Long>{
@@ -44,5 +47,12 @@ public class StatistikaKategoriteDaoImpl extends MySession implements Dao<Statis
     @Override
     public void deleteAll() {
 
+    }
+
+    public Boolean findByDate(Date date) {
+        String hql = "FROM Qarku Q WHERE Q.datat = :date";
+        Query query = getCurrentSession().createQuery(hql);
+        query.setParameter("date",date);
+        return null;
     }
 }
