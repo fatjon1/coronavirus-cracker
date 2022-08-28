@@ -12,6 +12,8 @@ import java.net.URISyntaxException;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 
@@ -22,22 +24,12 @@ public class DbInit {
     public static void run() {
         QarkuService qarkuService = new QarkuService();
         StatsService statsService = new StatsService();
-        KategoriteService kategoriteService = new KategoriteService();
-        RasteAktiveService rasteAktiveService = new RasteAktiveService();
-        RasteKomulativeService rasteKomulativeService = new RasteKomulativeService();
-        RasteTeRejaService rasteTeRejaService = new RasteTeRejaService();
-        SheruarService sheruarService = new SheruarService();
-        VdekjeKomulativeService vdekjeKomutativeService = new VdekjeKomulativeService();
+        StatistikaKategoriService statistikaKategoriService = new StatistikaKategoriService();
 
 
-            List<Qarku> qarqet = GetData.getData();
+            List<Qarku> qarqet = getQarqetData();
             qarkuService.saveAll(qarqet);
-            kategoriteService.init();
-            rasteAktiveService.init();
-            rasteKomulativeService.init();
-            rasteTeRejaService.init();
-            sheruarService.init();
-            vdekjeKomutativeService.init();
+            statistikaKategoriService.sinkronizo();
 
 
     }
@@ -55,6 +47,29 @@ public class DbInit {
         Gson gson = new GsonBuilder().create();
         Stats stats = gson.fromJson(response.body(), Stats.class);
         return stats;
+    }
+
+
+    //kjo metode eshte per te mare te dhenat nga web servisi ne format json.
+    public static List<Qarku> getQarqetData() throws URISyntaxException, IOException, InterruptedException {
+        List<Qarku> qarqet = new ArrayList<>();
+        HttpClient client = HttpClient.newHttpClient();
+
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(new URI("https://coronavirus.al/api/qarqet.php"))
+                .GET()
+                .build();
+        HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+        //System.out.println(response.body());
+
+
+        // bejme mapimin e te dhenave qe vijne nga metoda me siper
+        // ne formatin json dhe i transformojme ne objekte java.
+        Gson gson = new GsonBuilder().create();
+        Qarku[] qarqe = gson.fromJson(response.body(), Qarku[].class); // i ruajme ne nje array
+        List<Qarku> qarqeList = Arrays.stream(qarqe).toList(); //array e transformojme ne list
+        return qarqeList; // kthejme nje liste me te dhena
+
     }
 
 }

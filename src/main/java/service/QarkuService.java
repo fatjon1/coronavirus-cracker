@@ -83,7 +83,7 @@ public class QarkuService {
         return val;
     }
 
-    public void findByCity(){
+    /*public void findByCity(){
         Scanner scanner = new Scanner(System.in);
         System.out.println("vendos qytetin: ");
         String city = scanner.nextLine();
@@ -92,6 +92,6 @@ public class QarkuService {
             qarku.stream().forEach(System.out::println);
         }
         System.out.println("ska");
-    }
+    }*/
 
 }

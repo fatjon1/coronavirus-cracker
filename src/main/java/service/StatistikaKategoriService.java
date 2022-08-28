@@ -2,7 +2,6 @@ package service;
 
 import config.DbInit;
 import dao.StatistikaKategoriteDaoImpl;
-import model.RasteAktive;
 import model.StatistikaKategori;
 import model.Stats;
 
@@ -25,12 +24,12 @@ public class StatistikaKategoriService {
                 String data = response.getKategorite()[i];
                 StatistikaKategori model = new StatistikaKategori();
                 model.setDatat(response.getKategorite()[i]);
-                model.setRasteAktive(response.getRaste_aktive()[i]);
-                model.setRasteTeReja(response.getRaste_te_reja()[i]);
-                model.setRastetKumulative(response.getRaste_kumulative()[i]);
-                model.setVdekjeKumulative(response.getVdekje_kumulative()[i]);
+                model.setRaste_aktive(response.getRaste_aktive()[i]);
+                model.setRaste_te_reja(response.getRaste_te_reja()[i]);
+                model.setRastet_kumulative(response.getRaste_kumulative()[i]);
+                model.setVdekje_kumulative(response.getVdekje_kumulative()[i]);
                 model.setSheruar(response.getSheruar()[i]);
-                this.statistikaKategoriteDao.persist(model);
+                this.persist(model);
             }
 
             return true;

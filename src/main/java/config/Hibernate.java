@@ -44,12 +44,6 @@ public class Hibernate {
                 sessionFactory = configuration
                         .addPackage("coronavirus-cracker.model")
                         .addAnnotatedClass(Stats.class)
-                        .addAnnotatedClass(Kategorite.class)
-                        .addAnnotatedClass(RasteAktive.class)
-                        .addAnnotatedClass(RasteKomulative.class)
-                        .addAnnotatedClass(RasteTeReja.class)
-                        .addAnnotatedClass(Sheruar.class)
-                        .addAnnotatedClass(VdekjeKomulative.class)
                         .addAnnotatedClass(StatistikaKategori.class)
                         .buildSessionFactory(serviceRegistry);
             } catch (Exception e) {

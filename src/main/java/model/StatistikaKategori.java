@@ -3,6 +3,7 @@ package model;
 import lombok.Getter;
 import lombok.Setter;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -11,10 +12,11 @@ import javax.persistence.Id;
 @Entity
 public class StatistikaKategori {
     @Id
+    @Column(name = "date_id", length = 10)
     protected String datat;
-    protected Integer rasteAktive;
-    protected Integer rasteTeReja;
-    protected Integer rastetKumulative;
-    protected Integer vdekjeKumulative;
+    protected Integer raste_aktive;
+    protected Integer raste_te_reja;
+    protected Integer rastet_kumulative;
+    protected Integer vdekje_kumulative;
     protected Integer sheruar;
 }
